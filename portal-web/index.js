@@ -1,38 +1,38 @@
 //* Environment
-var WWW_PORT = process.env.WWW_PORT || 3000;
-var WWW_HOST = process.env.WWW_HOST || '0.0.0.0';
-
 var express = require('express'),
     http = require('http'),
     path = require('path'),
     routes = require('./routes/main'),
     consolidate = require('consolidate');
 
-//* Initialize web server
-var app = express();
+var app;
 
-app.engine('dust.html', consolidate.dust);
+function init(host, port) {
+    //* Initialize web server
+    app = express();
 
-app.configure(function() {
-    app.set('port', WWW_PORT);
-    app.set('host', WWW_HOST);
-    app.set('views', __dirname + '/static/views');
-    app.set('view engine', 'dust.html');
-    app.use(express.logger('dev'));
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(app.router);
-    app.use(express.static(path.join(__dirname, 'static')));
-});
+    app.engine('dust.html', consolidate.dust);
 
-app.configure('development', function() {
-    app.use(express.errorHandler());
-});
+    app.configure(function() {
+        app.set('port', port);
+        app.set('host', host);
+        app.set('views', __dirname + '/static/views');
+        app.set('view engine', 'dust.html');
+        app.use(express.logger('dev'));
+        app.use(express.bodyParser());
+        app.use(express.methodOverride());
+        app.use(app.router);
+        app.use(express.static(path.join(__dirname, 'static')));
+    });
+
+    app.configure('development', function() {
+        app.use(express.errorHandler());
+    });
 
 
-//* Initialize web server routes
-app.get('/', routes.index());
-
+    //* Initialize web server routes
+    app.get('/', routes.index());
+}
 
 function run() {
     //* Let's listen
@@ -42,4 +42,6 @@ function run() {
 }
 
 
+// * Exports
+module.exports.init = init;
 module.exports.run = run;
