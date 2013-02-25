@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app",
-    "postinstall": "cp node_modules/dustjs-linkedin/dist/dust-full-1.1.1.js portal-web/static/js/"
+    "postinstall": "cp node_modules/dustjs-linkedin/dist/dust-full-1.1.1.js lib/portal-web/static/js/"
   },
   "dependencies": {
     "express": "3.1",
