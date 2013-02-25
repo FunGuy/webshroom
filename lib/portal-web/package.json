@@ -1,6 +1,6 @@
 {
   "name": "funguy-portal-web",
   "version": "0.0.1",
-  "main": "./index.js",
+  "main": "./main.js",
   "private": true
 }
