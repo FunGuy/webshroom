@@ -19,10 +19,14 @@
     color: #5555FF;
 }
 
+.feedback .message {
+    color: #38051f;
+}
+
 .feedback.success {
     color: #55FF55;
 }
 
-.feedback .message {
-    color: #38051f;
+.feedback.warning {
+    color: #FFFF55;
 }
