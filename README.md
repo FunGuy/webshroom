@@ -1,5 +1,5 @@
-# template-web-node
-A template for building websites.
+# WebShroom
+Prototyping the FunGuy / WebShroom game, kinda. Really, it's about the underlying system.
 
 ## Features / tools
 * [dust][dustjs-linkedin]
@@ -14,16 +14,17 @@ A template for building websites.
 * [npm][]
 
 ## Install & Run
-    git clone https://github.com/zarac/template-web-node.git
-    cd template-web-node
+    git clone https://github.com/funguy/webshroom.git
+    cd webshroom
     npm install
     npm start
 
-## Author
+## Authors
 Hannes Landstedt a.k.a. zarac
+Hektor Wallin
 
 ## Source
-https://github.com/zarac/z-web-node.git
+https://github.com/funguy/webshroom.git
 
 ## License
 [NULL (No Unneeded License - License)][NULL]
